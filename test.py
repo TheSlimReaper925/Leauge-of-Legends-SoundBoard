@@ -7,13 +7,23 @@ win.title("test app")
 win.geometry("800x580")
 win.resizable(False, False)
 
+# def select_c1(event):
+#     if c1.current() == 0:
+#         c2['values'] = ['მარტი', 'აპრილი', 'მაისი']
+#     if c1.current() == 1:
+#         c2['values'] = ['ივნისი', 'ივლისი', 'აგვისტო']
+#     if c1.current() == 2:
+#         c2['values'] = ['სექტემბერი', 'ოქტომბერი', 'ნოემბერი']
+#     if c1.current() == 3:
+#         c2['values'] = ['დეკემბერი', 'იანვარი', 'თებერვალი']
 
-# champions = ("Neeko", "other")
+
+champions = ("Neeko", "other")
 
 neeko_quotes = ("mimic jinx.ogg", "Neeko was out.ogg", "Neeko_063.ogg", "Neeko_Ban.ogg",
                 "Neeko_select.ogg", "not being neeko.ogg", "not neeko.ogg")
 
-# champions_selected = (neeko_quotes)
+champions_selected = (neeko_quotes)
 
 mixer.init()
 
@@ -23,21 +33,21 @@ def play_quote(quote):
     mixer.music.play()
 
 
-z = 1
-x = 0
-for i in neeko_quotes:
-    t.Button(win, command=lambda y=i: play_quote(y), text=i[0:-4]).grid(row=z, column=x)
-    x += 1
-    if x == 7:
+def get_btn(event):
+    if champ_select.current() == 0:
+        z = 1
         x = 0
-        z += 1
+        for i in neeko_quotes:
+            t.Button(win, command=lambda y=i: play_quote(y), text=i[0:-4]).grid(row=z, column=x)
+            x += 1
+            if x == 7:
+                x = 0
+                z += 1
 
 
-
-#
-# champ_select = t.Combobox(win, values=champions)
-# champ_select.grid(row=0)
-# champ_select.bind("<<ComboboxSelected>>", lambda: get_btns(champions_selected[champ_select.current()]))
+champ_select = t.Combobox(win, values=champions)
+champ_select.grid(row=0)
+champ_select.bind("<<ComboboxSelected>>", get_btn)
 # btn2 = t.Button(win, command=lambda: play_quote("Neeko_Select.ogg"), text="Neeko select")
 # btn2.grid(row=0, column=1)
 #
