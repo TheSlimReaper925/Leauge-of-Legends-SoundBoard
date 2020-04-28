@@ -7,17 +7,6 @@ win.title("test app")
 win.geometry("800x580")
 win.resizable(False, False)
 
-# def select_c1(event):
-#     if c1.current() == 0:
-#         c2['values'] = ['მარტი', 'აპრილი', 'მაისი']
-#     if c1.current() == 1:
-#         c2['values'] = ['ივნისი', 'ივლისი', 'აგვისტო']
-#     if c1.current() == 2:
-#         c2['values'] = ['სექტემბერი', 'ოქტომბერი', 'ნოემბერი']
-#     if c1.current() == 3:
-#         c2['values'] = ['დეკემბერი', 'იანვარი', 'თებერვალი']
-
-
 champions = ("Neeko", "other")
 
 neeko_quotes = ("mimic jinx.ogg", "Neeko was out.ogg", "Neeko_063.ogg", "Neeko_Ban.ogg",
@@ -48,16 +37,5 @@ def get_btn(event):
 champ_select = t.Combobox(win, values=champions)
 champ_select.grid(row=0)
 champ_select.bind("<<ComboboxSelected>>", get_btn)
-# btn2 = t.Button(win, command=lambda: play_quote("Neeko_Select.ogg"), text="Neeko select")
-# btn2.grid(row=0, column=1)
-#
-# btn3 = t.Button(win, command=lambda: play_quote("Neeko_063.ogg"), text="Neeko on Nidalee")
-# btn3.grid(row=0, column=2)
-#
-# btn4 = t.Button(win, command=lambda: play_quote("not neeko.ogg"), text="Not Neeko")
-# btn4.grid(row=0, column=3)
-#
-# btn4 = t.Button(win, command=lambda: play_quote("not being neeko.ogg"), text="Not being Neeko")
-# btn4.grid(row=0, column=4)
 
 win.mainloop()
