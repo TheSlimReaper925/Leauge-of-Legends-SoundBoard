@@ -28,6 +28,6 @@ btn4 = t.Button(win, command=lambda: play_quote("not neeko.ogg"), text="Not Neek
 btn4.grid(row=0, column=3)
 
 btn4 = t.Button(win, command=lambda: play_quote("not being neeko.ogg"), text="Not being Neeko")
-btn4.grid(row=0, column=4)
+btn4.grid(row=0, column=5)
 
 win.mainloop()
