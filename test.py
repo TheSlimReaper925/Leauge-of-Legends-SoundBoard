@@ -38,4 +38,4 @@ champ_select = t.Combobox(win, values=champions)
 champ_select.grid(row=0)
 champ_select.bind("<<ComboboxSelected>>", get_btn)
 
-win.mainloop(
+win.mainloop()
