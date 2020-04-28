@@ -1,4 +1,4 @@
-import pygame
+from pygame import mixer
 from tkinter import *
 from tkinter import ttk as t
 
@@ -15,12 +15,12 @@ neeko_quotes = ("mimic jinx.ogg", "Neeko was out.ogg", "Neeko_063.ogg", "Neeko_B
 
 # champions_selected = (neeko_quotes)
 
-pygame.mixer.init()
+mixer.init()
 
 
 def play_quote(quote):
-    pygame.mixer.music.load("neeko voices/"+quote)
-    pygame.mixer.music.play()
+    mixer.music.load("neeko voices/"+quote)
+    mixer.music.play()
 
 
 z = 1
@@ -31,6 +31,8 @@ for i in neeko_quotes:
     if x == 7:
         x = 0
         z += 1
+
+
 
 #
 # champ_select = t.Combobox(win, values=champions)
