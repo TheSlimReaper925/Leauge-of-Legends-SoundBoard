@@ -9,8 +9,12 @@ win.resizable(False, False)
 
 champions = ("Neeko", "other")
 
-neeko_quotes = ("mimic jinx.ogg", "Neeko was out.ogg", "Neeko_063.ogg", "Neeko_Ban.ogg",
-                "Neeko_select.ogg", "not being neeko.ogg", "not neeko.ogg")
+neeko_quotes = ("Neeko_Select.ogg", "Neeko_Ban.ogg", "Star Guardian spawn music.ogg", "Neeko was out.ogg",
+                "not being neeko.ogg", "not neeko.ogg", "mimic jinx.ogg", "jungle buff neeko.ogg",
+                "last laugh - neeko.ogg", "Neeko - answers now.ogg", "Neeko - changing bodies.ogg",
+                "Neeko - danger beautiful.ogg", "Neeko - emotions.ogg", "Neeko - everywhere.ogg",
+                "Neeko - oovy cat.ogg", "Neeko - oyster.ogg", "Neeko - sho'ma.ogg", "Neeko - words are tricky.ogg",
+                "neeko first - friends.ogg", "no more room.ogg")
 
 champions_selected = (neeko_quotes)
 
@@ -29,7 +33,7 @@ def get_btn(event):
         for i in neeko_quotes:
             t.Button(win, command=lambda y=i: play_quote(y), text=i[0:-4]).grid(row=z, column=x)
             x += 1
-            if x == 7:
+            if x == 5:
                 x = 0
                 z += 1
 
