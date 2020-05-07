@@ -27,13 +27,13 @@ neeko_quotes = ("Neeko_Select.ogg", "Neeko_Ban.ogg", "Star Guardian spawn music.
                 "When others arrive.ogg", "Where is Neeko.ogg", "Who stands in Neeko's way.ogg")
 
 
-Nasus_voices = ("Nasus select.ogg", "Nasus Ban.ogg", "Nasus.move01.ogg", "Nasus.move02.ogg", "Nasus.move03.ogg",
+nasus_quotes = ("Nasus select.ogg", "Nasus Ban.ogg", "Nasus.move01.ogg", "Nasus.move02.ogg", "Nasus.move03.ogg",
                 "Nasus.move04.ogg", "Nasus.move05.ogg", "Nasus.move06.ogg", "Nasus.move07.ogg", "Nasus.move08.ogg",
                 "Nasus.move09.ogg", "Nasus.move10.ogg", "Nasus.move11.ogg", "Nasus.move12.ogg", "Nasus.move13.ogg",
                 "Nasus.move14.ogg", "Nasus.move15.ogg", "Nasus.move16.ogg")
 
 
-Poppy_voices = ("Poppy select.ogg", "Poppy Ban.ogg", "Star Guardian spawn music.ogg", "Poppy.start01.ogg",
+poppy_quotes = ("Poppy select.ogg", "Poppy Ban.ogg", "Star Guardian spawn music.ogg", "Poppy.start01.ogg",
                 "Poppy.start02.ogg", "Poppy.start03.ogg", "Poppy.start04.ogg", "Poppy.start05.ogg",
                 "Poppy.start06.ogg", "Poppy.move01.ogg", "Poppy.move02.ogg", "Poppy.move03.ogg",
                 "Poppy.move04.ogg", "Poppy.move05.ogg", "Poppy.move06.ogg", "Poppy.move07.ogg", "Poppy.move08.ogg",

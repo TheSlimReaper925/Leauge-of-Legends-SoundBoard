@@ -1,7 +1,7 @@
 from tkinter import *
 import tkinter.ttk as ttk
 from PIL import Image, ImageTk
-from test import *
+from champion_quotes import *
 
 class App(Tk):
 	def __init__(self, *args, **kwargs):
