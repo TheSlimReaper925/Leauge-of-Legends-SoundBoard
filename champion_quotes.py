@@ -3,11 +3,9 @@ import tkinter.ttk as ttk
 from pygame import mixer
 import page_voicelines
 
+
 class ChampionsPage(tk.Frame):
-    champions = ("Neeko", "Nasus", "Poppy", "other")
-    Neeko_voices = page_voicelines.neeko_quotes
-    Nasus_voices = page_voicelines.nasus_quotes
-    Poppy_voices = page_voicelines.poppy_quotes
+    champions = ("Neeko", "Nasus", "Poppy", "Elise", "other")
 
     @staticmethod
     def play_quote(quote, file):
@@ -41,11 +39,11 @@ class ChampionsPage(tk.Frame):
                 generate_buttons(page_voicelines.nasus_quotes, "Nasus voices/")
             if champ_select.current() == 2:
                 generate_buttons(page_voicelines.poppy_quotes, "Poppy voices/")
-
+            if champ_select.current() == 3:
+                generate_buttons(page_voicelines.elise_quotes, "elise voices/")
 
         frame = tk.LabelFrame(self, text="Selected champion quotes", labelanchor='n')
         frame.pack(fill="both", expand=1, padx=10, pady=30)
         champ_select = ttk.Combobox(self, values=ChampionsPage.champions)
         champ_select.place(relx=0.0065, rely=0.0065)
         champ_select.bind("<<ComboboxSelected>>", get_btn)
-

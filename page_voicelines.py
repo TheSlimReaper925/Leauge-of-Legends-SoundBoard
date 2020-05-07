@@ -12,12 +12,12 @@ neeko_quotes = ("Neeko_Select.ogg", "Neeko_Ban.ogg", "Star Guardian spawn music.
                 "Attacking - Shoom!.ogg", "Attacking - Trouble.ogg", "Attacking - Wildcat.ogg",
                 "Attacking - Yachisha.ogg", "Be cool.ogg", "bound - single body.ogg",
                 "Encounter - Anivia.ogg", "Encounter - Nidalee.ogg", "Encounter - Rengar.ogg",
-                "Encounter - Taliyah.ogg", "Encounter - Zyra.ogg", "Encounter - Vel'Koz.ogg",
+                "Encounter - Taliyah.ogg", "Encounter - Zyra.ogg", "Encounter  - Vel'Koz.ogg",
                 "Encounter - Female 1.ogg",  "Encounter - Female 2.ogg",  "Encounter - Jungle camp.ogg",
                 "Encounter - Jungle camp.ogg", "Encounter - Vastayan 1.ogg", "Encounter - Vastayan 2.ogg",
                 "Everyone fears Neeko.ogg", "Everything falling down.ogg", "everything is normal.ogg",
                 "Hello enemy!.ogg", "Is Neeko far.ogg", "Joke - Helicopter.ogg",
-                "Let's go.ogg", "Lonely peope.ogg", "Neeko awkward laugh 1.ogg", "Neeko awkward laugh 2.ogg",
+                "Let's go.ogg", "Lonely people.ogg", "Neeko awkward laugh 1.ogg", "Neeko awkward laugh 2.ogg",
                 "Neeko awkward laugh 3.ogg", "Neeko can be everyone.ogg", "Neeko dance 1.ogg", "Neeko dance 2.ogg",
                 "Neeko dance 3.ogg", "Neeko knows you.ogg", "Neeko laugh.ogg", "Neeko must stay unseen.ogg",
                 "Neeko strong.ogg", "No, tail - angry.ogg", "No one suspects Neeko.ogg", "Not secretly Neeko.ogg",
@@ -40,5 +40,10 @@ poppy_quotes = ("Poppy select.ogg", "Poppy Ban.ogg", "Star Guardian spawn music.
                 "Poppy.move09.ogg", "Poppy.move10.ogg", "Poppy.move11.ogg", "Poppy.move12.ogg", "Poppy.move13.ogg",
                 "Poppy.move14.ogg", "Poppy.move15.ogg", "Poppy.move16.ogg", "Poppy.move17.ogg", "Poppy.move18.ogg",
                 "Poppy.move19.ogg", "Poppy.move20.ogg", "Poppy.move21.ogg", "Poppy.move22.ogg")
+
+
+elise_quotes = ("Elise_Select.ogg", "Elise.attack5.ogg", "Elise.taunt1.ogg", "Elise.taunt2.ogg", "Elise.move1.ogg",
+                "Elise.move2.ogg", "Elise.move3.ogg", "Elise.move4.ogg", "Elise.move5.ogg", "Elise.move6.ogg",
+                "Elise.move7.ogg", "Elise.move8.ogg", "Elise.move9.ogg", "Elise.joke1.ogg", "Elise.joke2.ogg")
 
 
