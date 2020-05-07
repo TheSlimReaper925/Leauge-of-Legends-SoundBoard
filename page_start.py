@@ -1,51 +1,60 @@
-import tkinter as tk
+from tkinter import *
 import tkinter.ttk as ttk
 from PIL import Image, ImageTk
+from test import *
+
+class App(Tk):
+	def __init__(self, *args, **kwargs):
+		Tk.__init__(self, *args, **kwargs)
+		self.geometry("1024x700")
+		self.resizable(0, 0)
+		self.title("League Of Legends Sound Board")
+
+		#Setup Frame
+		container = Frame(self)
+		container.pack(side="top", fill="both", expand=True)
+		container.grid_rowconfigure(0, weight=1)
+		container.grid_columnconfigure(0, weight=1)
 
 
-def vp_start_gui():
-    global val, w, root
-    root = tk.Tk()
-    img = Image.open("materials/pic_page_start_background.jpg")
-    photo = ImageTk.PhotoImage(img)
-    top = Toplevel1 (photo, root)
-    root.mainloop()
+		self.frames = {}
 
-class Toplevel1:
+		for F in (StartPage, ChampionsPage):
+			frame = F(container, self)
+			self.frames[F] = frame
+			frame.grid(row=0, column=0, sticky="nsew")
 
-    def __init__(self, photo, top=None):
+		self.show_frame(StartPage)
 
-        self.style = ttk.Style()
+	def show_frame(self, context):
+		frame = self.frames[context]
+		frame.tkraise()
 
-        top.geometry("800x580+652+102")
-        top.resizable(0, 0)
-        top.title("League Of Legends Sound Board")
+class StartPage(Frame):
 
-        self.Label = ttk.Label(top, image=photo)
-        self.Label.place(x=0, y=0, relwidth=1, relheight=1)
-        self.TButton1 = ttk.Button(top , command=None)
-        self.TButton1.place(relx=0.5, rely=0.3, anchor=tk.CENTER, height=50, width=200, bordermode='ignore')
-        self.TButton1.configure(text='''Champion List''')
+	def __init__(self, parent, controller):
+		Frame.__init__(self, parent)
+		img = tk.PhotoImage(file="materials/leagueoflegends_community.png")
+		Label = ttk.Label(self, image=img)
+		Label.image = img
+		Label.place(x=0, y=0, relwidth=1, relheight=1)
 
-
-        self.TButton1_1 = ttk.Button(top)
-        self.TButton1_1.place(relx=0.5, rely=0.4, anchor=tk.CENTER, height=50, width=200
-                , bordermode='ignore')
-        self.TButton1_1.configure(command=None)
-        self.TButton1_1.configure(text='''Guessing Game''')
+		TButton1 = ttk.Button(self, command=lambda:controller.show_frame(ChampionsPage), text='''Champions List''', takefocus=False)
+		TButton1.place(relx=0.5, rely=0.3, anchor=CENTER, height=50, width=200, bordermode='ignore')
 
 
-        self.TButton1_2 = ttk.Button(top)
-        self.TButton1_2.place(relx=0.5, rely=0.5, anchor=tk.CENTER, height=50, width=200
-                , bordermode='ignore')
-        self.TButton1_2.configure(command=None)
-        self.TButton1_2.configure(takefocus="")
-        self.TButton1_2.configure(text='''Support Us''')
+		TButton1_1 = ttk.Button(self, command=None, text='''Guessing Game''', takefocus=False)
+		TButton1_1.place(relx=0.5, rely=0.4, anchor=CENTER, height=50, width=200, bordermode='ignore')
 
 
 
-if __name__ == '__main__':
-    vp_start_gui()
+		TButton1_2 = ttk.Button(self, command=None, text='''Support Us''', takefocus=False)
+		TButton1_2.place(relx=0.5, rely=0.5, anchor=CENTER, height=50, width=200, bordermode='ignore')
 
 
 
+
+
+
+app = App()
+app.mainloop()
