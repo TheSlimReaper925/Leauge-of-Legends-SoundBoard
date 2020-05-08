@@ -1,10 +1,10 @@
 from tkinter import *
-import tkinter.ttk as ttk
-from PIL import Image, ImageTk
 from champion_quotes import *
+from page_guessing_game import *
 
 
 class App(Tk):
+
     def __init__(self, *args, **kwargs):
         Tk.__init__(self, *args, **kwargs)
         self.geometry("1024x700")
@@ -19,7 +19,7 @@ class App(Tk):
 
         self.frames = {}
 
-        for F in (StartPage, ChampionsPage):
+        for F in (StartPage, ChampionsPage, GamePage):
             frame = F(container, self)
             self.frames[F] = frame
             frame.grid(row=0, column=0, sticky="nsew")
@@ -44,7 +44,7 @@ class StartPage(Frame):
                               takefocus=False)
         TButton1.place(relx=0.5, rely=0.3, anchor=CENTER, height=50, width=200, bordermode='ignore')
 
-        TButton1_1 = ttk.Button(self, command=None, text='''Guessing Game''', takefocus=False)
+        TButton1_1 = ttk.Button(self, command=lambda: controller.show_frame(GamePage), text='''Guessing Game''', takefocus=False)
         TButton1_1.place(relx=0.5, rely=0.4, anchor=CENTER, height=50, width=200, bordermode='ignore')
 
         TButton1_2 = ttk.Button(self, command=None, text='''Support Us''', takefocus=False)

@@ -1,0 +1,92 @@
+Index: champion_quotes.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import tkinter as tk\r\nimport tkinter.ttk as ttk\r\nfrom pygame import mixer\r\n\r\nchampions = (\"Neeko\", \"other\")\r\nneeko_quotes = (\"Neeko_Select.ogg\", \"Neeko_Ban.ogg\", \"Star Guardian spawn music.ogg\", \"Neeko was out.ogg\",\r\n                \"not being neeko.ogg\", \"not neeko.ogg\", \"mimic jinx.ogg\", \"jungle buff neeko.ogg\",\r\n                \"last laugh - neeko.ogg\", \"Neeko - answers now.ogg\", \"Neeko - changing bodies.ogg\",\r\n                \"Neeko - danger beautiful.ogg\", \"Neeko - emotions.ogg\", \"Neeko - everywhere.ogg\",\r\n                \"Neeko - oovy cat.ogg\", \"Neeko - oyster.ogg\", \"Neeko - sho'ma.ogg\", \"Neeko - words are tricky.ogg\",\r\n                \"neeko first - friends.ogg\", \"no more room.ogg\", \"fourth tale.ogg\", \"home is all around.gg\",\r\n                \"magic connects people.ogg\", \"Neeko will grow.ogg\", \"slow down, no.ogg\", \"survival means.ogg\")\r\n\r\n\r\ndef vp_start_gui():\r\n    global val, w, root\r\n    root = tk.Tk()\r\n    top = Toplevel2(root)\r\n    root.mainloop()\r\n\r\n\r\nclass Toplevel2:\r\n\r\n    @staticmethod\r\n    def play_quote(quote):\r\n        mixer.init()\r\n        mixer.music.load(\"neeko voices/\" + quote)\r\n        mixer.music.play()\r\n\r\n    def __init__(self, top=None):\r\n\r\n        top.title(\"test app\")\r\n        top.geometry(\"1024x700\")\r\n        top.resizable(False, False)\r\n\r\n        def get_btn(event):\r\n            quote_name = tk.StringVar()\r\n            if self.champ_select.current() == 0:\r\n                z = 1\r\n                x = 0\r\n                for i in neeko_quotes:\r\n                    quote_name.set(i[0:-4])\r\n                    button = tk.Button(self.frame, command=lambda y=i: Toplevel2.play_quote(y), text=quote_name.get()) \\\r\n                        .place(relx=0.165 * x + 0.0006, rely=0.08 * z - 0.08, height=45, width=150)\r\n\r\n                    x += 1\r\n                    if x == 6:\r\n                        x = 0\r\n                        z += 1\r\n\r\n        self.champions = champions\r\n        self.neeko_quotes = neeko_quotes\r\n        self.frame = tk.LabelFrame(top, text=\"Selected champion quotes\", labelanchor='n')\r\n        self.frame.pack(fill=\"both\", expand=1, padx=10, pady=30)\r\n        self.champ_select = ttk.Combobox(top, values=champions)\r\n        self.champ_select.place(relx=0.0065, rely=0.0065)\r\n        self.champ_select.bind(\"<<ComboboxSelected>>\", get_btn)\r\n\r\n\r\nif __name__ == '__main__':\r\n    vp_start_gui()\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- champion_quotes.py	(revision a52eda753da98e997c68bc7eb1ad4363c71a7f52)
++++ champion_quotes.py	(date 1588862908908)
+@@ -2,45 +2,37 @@
+ import tkinter.ttk as ttk
+ from pygame import mixer
+ 
+-champions = ("Neeko", "other")
+-neeko_quotes = ("Neeko_Select.ogg", "Neeko_Ban.ogg", "Star Guardian spawn music.ogg", "Neeko was out.ogg",
+-                "not being neeko.ogg", "not neeko.ogg", "mimic jinx.ogg", "jungle buff neeko.ogg",
+-                "last laugh - neeko.ogg", "Neeko - answers now.ogg", "Neeko - changing bodies.ogg",
+-                "Neeko - danger beautiful.ogg", "Neeko - emotions.ogg", "Neeko - everywhere.ogg",
+-                "Neeko - oovy cat.ogg", "Neeko - oyster.ogg", "Neeko - sho'ma.ogg", "Neeko - words are tricky.ogg",
+-                "neeko first - friends.ogg", "no more room.ogg", "fourth tale.ogg", "home is all around.gg",
+-                "magic connects people.ogg", "Neeko will grow.ogg", "slow down, no.ogg", "survival means.ogg")
++
++
++
++class ChampionsPage(tk.Frame):
++    champions = ("Neeko", "other")
++    neeko_quotes = ("Neeko_Select.ogg", "Neeko_Ban.ogg", "Star Guardian spawn music.ogg", "Neeko was out.ogg",
++                    "not being neeko.ogg", "not neeko.ogg", "mimic jinx.ogg", "jungle buff neeko.ogg",
++                    "last laugh - neeko.ogg", "Neeko - answers now.ogg", "Neeko - changing bodies.ogg",
++                    "Neeko - danger beautiful.ogg", "Neeko - emotions.ogg", "Neeko - everywhere.ogg",
++                    "Neeko - oovy cat.ogg", "Neeko - oyster.ogg", "Neeko - sho'ma.ogg", "Neeko - words are tricky.ogg",
++                    "neeko first - friends.ogg", "no more room.ogg", "fourth tale.ogg", "home is all around.gg",
++                    "magic connects people.ogg", "Neeko will grow.ogg", "slow down, no.ogg", "survival means.ogg")
+ 
+-
+-def vp_start_gui():
+-    global val, w, root
+-    root = tk.Tk()
+-    top = Toplevel2(root)
+-    root.mainloop()
+-
+-
+-class Toplevel2:
+-
+     @staticmethod
+     def play_quote(quote):
+         mixer.init()
+         mixer.music.load("neeko voices/" + quote)
+         mixer.music.play()
+ 
+-    def __init__(self, top=None):
++    def __init__(self, parent, controller):
+ 
+-        top.title("test app")
+-        top.geometry("1024x700")
+-        top.resizable(False, False)
++        tk.Frame.__init__(self, parent)
+ 
+         def get_btn(event):
+             quote_name = tk.StringVar()
+-            if self.champ_select.current() == 0:
++            if champ_select.current() == 0:
+                 z = 1
+                 x = 0
+-                for i in neeko_quotes:
++                for i in ChampionsPage.neeko_quotes:
+                     quote_name.set(i[0:-4])
+-                    button = tk.Button(self.frame, command=lambda y=i: Toplevel2.play_quote(y), text=quote_name.get()) \
++                    button = tk.Button(frame, command=lambda y=i: ChampionsPage.play_quote(y), text=quote_name.get()) \
+                         .place(relx=0.165 * x + 0.0006, rely=0.08 * z - 0.08, height=45, width=150)
+ 
+                     x += 1
+@@ -48,14 +40,10 @@
+                         x = 0
+                         z += 1
+ 
+-        self.champions = champions
+-        self.neeko_quotes = neeko_quotes
+-        self.frame = tk.LabelFrame(top, text="Selected champion quotes", labelanchor='n')
+-        self.frame.pack(fill="both", expand=1, padx=10, pady=30)
+-        self.champ_select = ttk.Combobox(top, values=champions)
+-        self.champ_select.place(relx=0.0065, rely=0.0065)
+-        self.champ_select.bind("<<ComboboxSelected>>", get_btn)
+ 
++        frame = tk.LabelFrame(self, text="Selected champion quotes", labelanchor='n')
++        frame.pack(fill="both", expand=1, padx=10, pady=30)
++        champ_select = ttk.Combobox(self, values=ChampionsPage.champions)
++        champ_select.place(relx=0.0065, rely=0.0065)
++        champ_select.bind("<<ComboboxSelected>>", get_btn)
+ 
+-if __name__ == '__main__':
+-    vp_start_gui()

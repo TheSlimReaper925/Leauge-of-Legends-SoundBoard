@@ -5,7 +5,7 @@ import page_voicelines
 
 
 class ChampionsPage(tk.Frame):
-    champions = ("Neeko", "Nasus", "Poppy", "Elise", "other")
+    champions = ("Neeko", "Nasus", "Poppy", "Elise")
 
     @staticmethod
     def play_quote(quote, file):
@@ -25,7 +25,7 @@ class ChampionsPage(tk.Frame):
             for i in champion:
                 quote_name.set(i[0:-4])
                 ttk.Button(frame, command=lambda y=i: ChampionsPage.play_quote(y, file), text=quote_name.get()) \
-                    .place(relx=0.125 * x + 0.0006, rely=0.06 * z - 0.06, height=30, width=120)
+                    .place(relx=0.125 * x + 0.0015, rely=0.1 * z - 0.1, height=45, width=120)
 
                 x += 1
                 if x == 8:
@@ -42,8 +42,9 @@ class ChampionsPage(tk.Frame):
             if champ_select.current() == 3:
                 generate_buttons(page_voicelines.elise_quotes, "elise voices/")
 
+
         frame = tk.LabelFrame(self, text="Selected champion quotes", labelanchor='n')
         frame.pack(fill="both", expand=1, padx=10, pady=30)
         champ_select = ttk.Combobox(self, values=ChampionsPage.champions)
-        champ_select.place(relx=0.0065, rely=0.0065)
+        champ_select.place(relx=0.01, rely=0.0065)
         champ_select.bind("<<ComboboxSelected>>", get_btn)

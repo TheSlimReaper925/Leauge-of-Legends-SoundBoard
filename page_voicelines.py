@@ -1,3 +1,5 @@
+
+
 neeko_quotes = ("Neeko_Select.ogg", "Neeko_Ban.ogg", "Star Guardian spawn music.ogg", "Neeko was out.ogg",
                 "not being neeko.ogg", "not neeko.ogg", "mimic jinx.ogg", "jungle buff neeko.ogg",
                 "last laugh - neeko.ogg", "Neeko - answers now.ogg", "Neeko - changing bodies.ogg",
@@ -41,9 +43,8 @@ poppy_quotes = ("Poppy select.ogg", "Poppy Ban.ogg", "Star Guardian spawn music.
                 "Poppy.move14.ogg", "Poppy.move15.ogg", "Poppy.move16.ogg", "Poppy.move17.ogg", "Poppy.move18.ogg",
                 "Poppy.move19.ogg", "Poppy.move20.ogg", "Poppy.move21.ogg", "Poppy.move22.ogg")
 
-
 elise_quotes = ("Elise_Select.ogg", "Elise.attack5.ogg", "Elise.taunt1.ogg", "Elise.taunt2.ogg", "Elise.move1.ogg",
                 "Elise.move2.ogg", "Elise.move3.ogg", "Elise.move4.ogg", "Elise.move5.ogg", "Elise.move6.ogg",
                 "Elise.move7.ogg", "Elise.move8.ogg", "Elise.move9.ogg", "Elise.joke1.ogg", "Elise.joke2.ogg")
 
-
+allquotes = {'neeko':neeko_quotes, 'Nasus':nasus_quotes, 'Poppy':poppy_quotes, 'elise':elise_quotes}
