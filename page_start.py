@@ -55,7 +55,9 @@ class StartPage(Frame):
                                 text='''Guessing Game''', takefocus=False)
         TButton1_1.place(relx=0.5, rely=0.5, anchor=CENTER, height=70, width=220, bordermode='ignore')
 
-        TButton1_2 = ttk.Button(self, style='my.TButton', command=lambda : webbrowser.open('https://github.com/TheSlimReaper925/Leauge-of-Legends-SoundBoard'), text='''Support Us''', takefocus=False)
+        TButton1_2 = ttk.Button(self, style='my.TButton',
+                                command=lambda: webbrowser.open('https://github.com/TheSlimReaper925/Leauge-of-Legends-SoundBoard'),
+                                text='''Support Us''', takefocus=False)
         TButton1_2.place(relx=0.5, rely=0.65, anchor=CENTER, height=70, width=220, bordermode='ignore')
 
         exitBtnStyle = ttk.Style()
@@ -125,7 +127,7 @@ class GamePage(Frame):
 
         # EnterButton
 
-        def btnEnterClick(event):
+        def btnEnterClick():
             if randomChamp.get().lower() == str(guess.get()).lower():
                 guess.set('')
                 x = int(score.get())
@@ -149,11 +151,14 @@ class GamePage(Frame):
                     else:
                         backBtnFunc()
 
+        def enter_press(event):
+            btnEnterClick()
+
         btnEnter = ttk.Button(self, text='SUBMIT', style='my.TButton', takefocus=False, command=btnEnterClick)
         btnEnter.place(relx=0.5, rely=0.65, anchor=CENTER, height=40, width=180)
 
         # Enter click on KeyBoard
-        textEntry.bind('<Return>', btnEnterClick)
+        textEntry.bind('<Return>', enter_press)
 
         # BackButton
         def backBtnFunc():
