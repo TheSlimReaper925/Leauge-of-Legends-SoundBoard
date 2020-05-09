@@ -1,4 +1,3 @@
-from champion_quotes import *
 from tkinter import *
 import tkinter.ttk as ttk
 import tkinter.font as tkf
