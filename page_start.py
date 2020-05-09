@@ -92,13 +92,13 @@ class GamePage(Frame):
         # Lives Remaining
         heartsStr = StringVar()
         heartsStr.set(' ♥ ♥ ♥')
-        heartsLabel = ttk.Label(self, textvariable=heartsStr, font=tkf.Font(family='Helvetica', size=36, weight='bold'))
+        heartsLabel = ttk.Label(self, textvariable=heartsStr, foreground='#e86456', font=tkf.Font(family='Helvetica', size=36, weight='bold'))
         heartsLabel.place(relx=0.0125, rely=0.01)
         # Score
         score = StringVar()
         score.set('0')
-        scoreText = ttk.Label(self, text="Score: ", font=tkf.Font(family='Helvetica', size=36, weight='bold'))
-        scoreLabel = ttk.Label(self, textvariable=score, font=tkf.Font(family='Helvetica', size=36, weight='bold'))
+        scoreText = ttk.Label(self, text="Score: ", foreground='#d4b22a', font=tkf.Font(family='Helvetica', size=36, weight='bold'))
+        scoreLabel = ttk.Label(self, textvariable=score, foreground='#d4b22a', font=tkf.Font(family='Helvetica', size=36, weight='bold'))
         scoreText.place(relx=0.78, rely=0.01)
         scoreLabel.place(relx=0.94, rely=0.01)
 
