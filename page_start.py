@@ -6,6 +6,7 @@ import page_voicelines as pv
 from pygame import mixer
 import random
 import page_voicelines
+import webbrowser
 
 
 class App(Tk):
@@ -54,7 +55,7 @@ class StartPage(Frame):
                                 text='''Guessing Game''', takefocus=False)
         TButton1_1.place(relx=0.5, rely=0.5, anchor=CENTER, height=70, width=220, bordermode='ignore')
 
-        TButton1_2 = ttk.Button(self, style='my.TButton', command=None, text='''Support Us''', takefocus=False)
+        TButton1_2 = ttk.Button(self, style='my.TButton', command=lambda : webbrowser.open('https://github.com/TheSlimReaper925/Leauge-of-Legends-SoundBoard'), text='''Support Us''', takefocus=False)
         TButton1_2.place(relx=0.5, rely=0.65, anchor=CENTER, height=70, width=220, bordermode='ignore')
 
         exitBtnStyle = ttk.Style()
@@ -63,6 +64,11 @@ class StartPage(Frame):
         exitButton = ttk.Button(self, style='PS.TButton', command=lambda: app.destroy(), text='''EXIT''',
                                 takefocus=False)
         exitButton.place(relx=0.97, rely=0.98, anchor=SE, height=50, width=110, bordermode='ignore')
+        versionText = ttk.Label(self, text='version 0.01 alpha')
+        versionText.place(relx=0.000001, rely=0.999999, anchor=SW)
+
+
+
 
 
 class GamePage(Frame):
@@ -104,7 +110,7 @@ class GamePage(Frame):
         buttonStyle = ttk.Style()
         buttonStyle.configure('my.TButton', font=mediumFont, background='#000000')
         btnRandomVoice = ttk.Button(self, text=' PLAY\nVOICE', style='my.TButton', takefocus=False,
-                                    command=btnRandmoVoiceClick)  # TODO
+                                    command=btnRandmoVoiceClick)
         btnRandomVoice.place(relx=0.5, rely=0.4, anchor=CENTER, height=80, width=180)
 
         # TextEntry
@@ -172,6 +178,9 @@ class GamePage(Frame):
         exitButton.place(relx=0.97, rely=0.98, anchor=SE, height=50, width=110, bordermode='ignore')
 
 
+
+
+
 class ChampionsPage(Frame):
     champions = ("Neeko", "Nasus", "Poppy", "Elise")
 
@@ -211,7 +220,7 @@ class ChampionsPage(Frame):
                 generate_buttons(page_voicelines.elise_quotes, "elise voices/")
 
         frame = LabelFrame(self, text="Selected champion quotes", labelanchor='n')
-        frame.place(relx=0.5, rely=0.46, height=600, width=1000, anchor=CENTER)
+        frame.place(relx=0.5, rely=0.47, height=600, width=1000, anchor=CENTER)
 
         champ_select = ttk.Combobox(self, values=ChampionsPage.champions)
         champ_select.place(relx=0.01, rely=0.0065)
@@ -220,12 +229,15 @@ class ChampionsPage(Frame):
         # fun fact on selected champion
         fun_fact_var = StringVar()
         fun_fact_var.set("select ComboBox and press alt+enter to get fun fact on champion you selected!")
-        fun_fact_text = Label(self, textvariable=fun_fact_var)
-        fun_fact_text.place(relx=0.5, rely=0.0065)
+        CQStyle = ttk.Style()
+        CQFont = tkf.Font(family='Helvetica', size=11, weight='bold')
+        CQStyle.configure('CQ.TLabel', font=CQFont)
+        fun_fact_text = ttk.Label(self, textvariable=fun_fact_var, style='CQ.TLabel', foreground='#17bfba')
+        fun_fact_text.place(relx=0.5, rely=0.02, anchor=CENTER)
 
         def fun_fact_show(event):
             if champ_select.current() == 0:
-                fun_fact_var.set("Neeko can become everyone, even YOU!")
+                fun_fact_var.set("Neeko can become anyone, even YOU!")
             if champ_select.current() == 1:
                 fun_fact_var.set("Nasus is over 3796 years old and less than 3900 years old. 'I walk through the ages'")
             if champ_select.current() == 2:
