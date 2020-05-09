@@ -5,7 +5,7 @@ neeko_quotes = ("Neeko_Select.ogg", "Neeko_Ban.ogg", "Star Guardian spawn music.
                 "last laugh - neeko.ogg", "Neeko - answers now.ogg", "Neeko - changing bodies.ogg",
                 "Neeko - danger beautiful.ogg", "Neeko - emotions.ogg", "Neeko - everywhere.ogg",
                 "Neeko - oovy cat.ogg", "Neeko - oyster.ogg", "Neeko - sho'ma.ogg", "Neeko - words are tricky.ogg",
-                "neeko first - friends.ogg", "no more room.ogg", "fourth tale.ogg", "home is all around.gg",
+                "neeko first - friends.ogg", "no more room.ogg", "fourth tale.ogg", "home is all around.ogg",
                 "magic connects people.ogg", "Neeko will grow.ogg", "slow down, no.ogg", "survival means.ogg",
                 "after fight ends.ogg", "Attacking - Ataco.ogg", "Attacking - Bagaduhng.ogg",
                 "Attacking - Battle time.ogg", "Attacking - Chitali.ogg", "Attacking - Danger.ogg",
